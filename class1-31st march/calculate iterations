@@ -1,0 +1,112 @@
+function abc(n){
+    let sum =0;
+    for(let i=0 ; i<=n ;i++){
+        sum = sum +i
+    }
+}
+// function abc time complexity is n+1 => O(n)
+
+function abc1(n){
+    let sum =0;
+    for(let i=0 ; i*i<=n ;i++){
+        sum = sum +i
+    }
+}
+// function abc time complexity is sqrt(n+1) => O(sqrt(n))
+
+//FORMULA 
+// [a,b] = b-a +1
+
+//[0,n] = (n-1) +1  =>n
+//[0,sqrt(n] = (sqrt(n)-0  +1  => sqrt(n)+1
+
+// sqrt(n)-0 +1 = sqrt(n+1)
+
+
+function xyz(n){
+    let i = n;
+    while(i > 1){
+        i = i/2;
+    }
+}
+
+// it can be 
+// for(let i=0; i<=n ; i = i/2){
+         
+// }
+
+
+// dryrun
+// i = n
+// i = n/2
+// i = n/4
+// i = n/8
+// i = n/16
+// i = n/32
+// ///...... till
+//  i =1 
+// so its in the format of 
+// n , n/2 , n/4 ,n/8,n/16, n/32 .... 1
+// => n , n/2^1 , n/2^2 ,n/2^3,n/2^4, n/2^5 .... 1
+// => n / (2^(k-1)) =1
+// => n = (2^(k-1)) assuming 2^k
+//taking log both side log base 2
+// => log(n) = log(2^k)
+// =>log(n) = k log2^2
+//if number and base are same is equal to 1
+// so  log(n) =k
+//complexity is 
+//32  16  8 4 2
+
+
+
+// nested loop concepts
+
+for(let i=1 ; i<=20 ;i++){
+    for(let j=1 ; i<=n ;j++){
+            sum = sum + (i*j)
+    }
+}
+
+
+// make a table
+
+// i n   |   j  n   |  iterations 
+// i  n  |   j  n   |  iterations 
+// i  n  |   j  n   |  iterations 
+// i  n  |   j  n   |  iterations 
+// i  n  |   j  n   |  iterations 
+// i  n  |   j  n  |  iterations 
+// i  n  |   j  n   |  iterations 
+// i   n |   j  n   |  iterations  ... 20 timee //20 n * 20 n
+// 40 n^2   O(n^2)
+
+
+
+//NESTED LOOP ONE AFTER OTHER
+
+for(let i=0 ; i<n;i++){
+    for(let j=0 ; j < 2^i ;j++){
+        sum = sum + (i*j)
+    }
+}
+
+// make a table
+
+// i 1   |   j  [1,2^1]   |  total iterations =>2^1
+// i  2  |   j  [1,2^2]   | total iterations   =>2^2
+// i  3  |   j  [1,2^3]   | total iterations   =>2^3
+// i  n  |   j  n   | total iterations  
+// i  n  |   j  n   | total iterations  
+// i  n  |   j  n   | total iterations  
+// i  n  |   j  n   | total iterations  
+// i   n |   j  [1,2^n]]   | total iterations => 2^n   ... n times
+// 2^1 , 2^2, 2^3 ....2^n 
+// THIS IS A GP series
+// sum = (a^((r^n)-1)) / (r-1)
+// (2(2^n -1))/ (2-1)  => 2(2^n -1) => total iterations are 2^n+1 -2
+// a = first term // a v (n+1) / aVn
+// r = commmon factor
+// n = no.of times //n
+//20 n * 20 n
+// 40 n^2   O(n^2)
