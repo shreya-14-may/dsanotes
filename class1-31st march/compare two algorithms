@@ -1,0 +1,34 @@
+Problem statement
+
+A                       |                    B
+100logn                 |                    n/10
+
+=>afer n > 3550 a is optimized else a is optimized
+
+
+to compare algos graph is important
+always compare the algo for larger input
+
+
+so if we talk about larger algo a is optimized
+
+
+
+3 notations:
+
+Big0 (0)  -> we need this as to find the worst case
+Omega   -> average case
+Theta   -> best case
+
+
+how to find
+1.calculate bo.of iterations
+2.neglect lower order degree
+3.neglect ocnstant coeeficient terms
+
+
+Questions : f(x) = 7x +3(x^2)log(x) +10^4  => x^2 log(x)  => O(x^2 log(x))
+Questions : f(x) = 2x log(x) + x(sqrt(x)) +5  => x sqrt(x)
+
+
+//log(x)  < sqrt(x) < x < xlog(x) < x sqrt(x) < x^2
